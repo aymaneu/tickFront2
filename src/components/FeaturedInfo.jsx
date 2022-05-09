@@ -2,30 +2,33 @@ import React, { useEffect } from "react";
 import "../style/css/featuredInfo.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCompaniesLengthData } from "../features/reducers/companyLengthSlice";
-import { fetchAgencyLengthData } from "../features/reducers/agencyLengthSlice2";
+import { fetchAgencyLengthData } from "../features/reducers/agencyLengthSlice";
 import { fetchTicketLengthData2 } from "../features/reducers/ticketLengthSlice2";
+import { fetchTicketLengthData } from "../features/reducers/ticketLengthSlice";
+import { fetchServiceLengthData } from "../features/reducers/serviceLengthSlice";
 
 const FeaturedInfo = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCompaniesLengthData());
+    dispatch(fetchServiceLengthData({ id: 75 }));
   }, [dispatch]);
   useEffect(() => {
-    dispatch(fetchAgencyLengthData());
+    dispatch(fetchAgencyLengthData({ id: 75 }));
   }, [dispatch]);
   useEffect(() => {
-    dispatch(fetchTicketLengthData2());
+    dispatch(fetchTicketLengthData({ id: 75 }));
   }, [dispatch]);
 
-  const company = useSelector(
-    (state) => state.companyFullLength.data.companyLength
+  const service = useSelector(
+    (state) => state.serviceFullLength.data.serviceLength
   );
+
   const agency = useSelector(
-    (state) => state.agencyFullLength2.data.agencyLength
+    (state) => state.agencyFullLength.data.agencyLength
   );
   const ticket = useSelector(
-    (state) => state.ticketFullLength2.data.ticketLength
+    (state) => state.ticketFullLength.data.ticketLength
   );
 
   return (
@@ -33,7 +36,7 @@ const FeaturedInfo = () => {
       <div className="featuredItem">
         <span className="featuredTitle">agencies</span>
         <div className="featuredStatueContainer">
-          <span className="featuredSome">{company}</span>
+          <span className="featuredSome">{agency}</span>
         </div>
         <span className="featuredSub">total agencies</span>
       </div>
@@ -47,7 +50,7 @@ const FeaturedInfo = () => {
       <div className="featuredItem">
         <span className="featuredTitle">services</span>
         <div className="featuredStatueContainer">
-          <span className="featuredSome">{ticket}</span>
+          <span className="featuredSome">{service}</span>
         </div>
         <span className="featuredSub">total services</span>
       </div>
