@@ -2,18 +2,18 @@ import React, { useEffect } from "react";
 import "../style/css/widgetCat.css";
 import { Visibility } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCategoryData } from "../features/reducers/categorySlice";
+import { fetchServiceData } from "../features/reducers/agencySlice2";
 import { Link, useParams } from "react-router-dom";
 
 const WidgetSer = () => {
   let { categoryId } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCategoryData());
+    dispatch(fetchServiceData({ id: 75 }));
   }, [dispatch]);
-  const categoriesData = useSelector((state) => state.categories.data);
+  const serviceData = useSelector((state) => state.services.data);
 
-  const looping = categoriesData.slice(0, 5).map((i) => {
+  const looping = serviceData.slice(0, 5).map((i) => {
     return i;
   });
 
@@ -21,13 +21,13 @@ const WidgetSer = () => {
     <div className="widgetCat">
       <span className="widgetCatTitle">services</span>
       <ul className="widgetCatList">
-        {looping.map((category) => {
+        {looping.map((service) => {
           return (
-            <li key={category.id} className="widgetCatListItem">
+            <li key={service.id} className="widgetCatListItem">
               <div className="widgetCatCom">
-                <span className="widgetCatName">{category.name}</span>
+                <span className="widgetCatName">{service.serviceName}</span>
               </div>
-              <Link to={"/getAllCompaniesByCategory/" + category.id}>
+              <Link to={"/getAllCompaniesByCategory/" + service.id}>
                 <button className="widgetCatButton">
                   <Visibility className="widgetSmIcon" />
                   Display

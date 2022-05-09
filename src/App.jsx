@@ -8,7 +8,6 @@ import CompanyCat from "./pages/CompanyCat";
 import Analytics from "./pages/Analytics";
 import EditCompany from "./pages/EditCompany";
 import DisplayCompany from "./pages/DisplayCompany";
-import CreateCompany from "./pages/CreateCompany";
 import CompaniesAll from "./pages/CompaniesAll";
 import CategoriesAll from "./pages/CategoriesAll";
 import CreateCategory from "./pages/CreateCategory";
@@ -36,7 +35,6 @@ function App() {
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/company" element={<CompaniesAll />} />
               <Route path="/category" element={<CategoriesAll />} />
-              <Route path="/newCompany" element={<CreateCompany />} />
               <Route path="/newCategory" element={<CreateCategory />} />
               <Route path="/editCategory/:id" element={<EditCategory />} />
               <Route path="*" element={<Error />} />

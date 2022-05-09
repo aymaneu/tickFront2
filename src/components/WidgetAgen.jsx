@@ -3,7 +3,7 @@ import "../style/css/widgetCom.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCompaniesData } from "../features/reducers/companySlice";
 
-const WidgetCom = () => {
+const WidgetAgen = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,13 +21,12 @@ const WidgetCom = () => {
 
   return (
     <div className="widgetCom">
-      <h3 className="widgetComTitle">latest companies update</h3>
+      <h3 className="widgetComTitle">latest agencies update</h3>
       <table className="widgetComTable">
         <tbody>
           <tr className="widgetComTr">
-            <th className="widgetComTh">company Name</th>
+            <th className="widgetComTh">agency Name</th>
             <th className="widgetComTh">Date</th>
-            <th className="widgetComTh">Category</th>
             <th className="widgetComTh">Status</th>
           </tr>
           {condition ? (
@@ -39,7 +38,7 @@ const WidgetCom = () => {
                     <span className="widgetComName">{comp.email}</span>
                   </td>
                   <td className="widgetComDate">{comp.creationDate}</td>
-                  <td className="widgetComAmount">{comp.name}</td>
+
                   <td className="widgetComStatus">
                     <Button type={comp.status} />
                   </td>
@@ -65,4 +64,4 @@ const WidgetCom = () => {
   );
 };
 
-export default WidgetCom;
+export default WidgetAgen;

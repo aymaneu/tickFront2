@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import "../style/css/createCategory.css";
 //mui
 import { TextField, Button } from "@mui/material";
-import { postCategoryData } from "../features/reducers/categorySlice";
+import { fetchServiceData } from "../features/reducers/agencySlice2";
 
 const CreateCategory = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const CreateCategory = () => {
   // handling changes
   const handlePost = (e) => {
     e.preventDefault();
-    dispatch(postCategoryData({ goBoy, id: 1 }));
+    dispatch(fetchServiceData({ goBoy, id: 1 }));
   };
   return (
     <div

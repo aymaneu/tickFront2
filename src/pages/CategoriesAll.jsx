@@ -5,16 +5,13 @@ import { fetchCompaniesData } from "../features/reducers/companySlice";
 import "../style/css/companyCat.css";
 import { Link, useParams } from "react-router-dom";
 import { Visibility, DeleteOutline } from "@material-ui/icons";
-import {
-  deleteCategoryData,
-  fetchCategoryData,
-} from "../features/reducers/categorySlice";
+import { fetchServiceData } from "../features/reducers/agencySlice2";
 
 const CategoriesAll = () => {
   let { categoryId } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCategoryData());
+    dispatch(fetchServiceData());
   }, [dispatch]);
   const categoriesData = useSelector((state) => state.categories.data);
 

@@ -38,13 +38,13 @@ const Sidebar = () => {
             <NavLink to="/company">
               <li className="sidebarListItem">
                 <Apartment className="sidebarIcon" />
-                Company
+                Agency
               </li>
             </NavLink>
             <NavLink to="/category">
               <li className="sidebarListItem">
                 <Class className="sidebarIcon" />
-                Category
+                Service
               </li>
             </NavLink>
           </ul>

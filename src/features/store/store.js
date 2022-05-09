@@ -4,7 +4,7 @@ import agencyReducer from "../reducers/agencySlice";
 import companyDateReducer from "../reducers/companyDateSlice";
 import ticketReducer from "../reducers/ticketSlice";
 import companyChartReducer from "../reducers/companyChartSlice";
-import categoryReducer from "../reducers/categorySlice";
+import serviceReducer from "../reducers/agencySlice2";
 import companyCategoryReducer from "../reducers/companyCaSlice";
 import oneCompanyReducer from "../reducers/oneCompanySlice";
 import agencyLengthReducer from "../reducers/agencyLengthSlice";
@@ -30,7 +30,7 @@ const store = configureStore({
     ticketFullLength2: ticketLengthReducer2,
     tickets: ticketReducer,
     ticketFullLength: ticketLengthReducer,
-    categories: categoryReducer,
+    services: serviceReducer,
     serviceFullLength: serviceLengthReducer,
   },
 });

@@ -4,7 +4,7 @@ import "./../style/css/home.css";
 import FeaturedInfo from "../components/FeaturedInfo";
 import WidgetSer from "../components/WidgetSer";
 import "./../style/css/home.css";
-import WidgetCom from "../components/WidgetCom";
+import WidgetAgen from "../components/WidgetAgen";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       <Chart />
       <div className="homeWidgets">
         <WidgetSer />
-        <WidgetCom />
+        <WidgetAgen />
       </div>
     </div>
   );

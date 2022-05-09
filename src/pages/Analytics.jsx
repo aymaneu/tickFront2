@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import "../style/css/companyCat.css";
 import { Link, useParams } from "react-router-dom";
 import { Visibility } from "@material-ui/icons";
-import { fetchCategoryData } from "../features/reducers/categorySlice";
+import { fetchServiceData } from "../features/reducers/agencySlice2";
 import AnalyticsCom from "../components/AnalyticsCom";
 
 const Analytics = () => {
@@ -82,7 +82,7 @@ const Analytics = () => {
             margin: "auto",
           }}
         >
-          <h3 className="chartTitle">most active companies this month</h3>
+          <h3 className="chartTitle">most active agencies this month</h3>
 
           <DataGrid
             getRowId={(r) => r.id}
@@ -94,7 +94,7 @@ const Analytics = () => {
             disableSelectionOnClick
           />
           <br />
-          <h3 className="chartTitle">most active categories this month</h3>
+          <h3 className="chartTitle">most active services this month</h3>
 
           <DataGrid
             getRowId={(r) => r.id}

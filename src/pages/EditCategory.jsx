@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import "../style/css/createCategory.css";
 //mui
 import { TextField, Button } from "@mui/material";
-import { putCategoryData } from "../features/reducers/categorySlice";
+import { fetchServiceData } from "../features/reducers/agencySlice2";
 
 const EditCategory = () => {
   let { id } = useParams();
@@ -23,7 +23,7 @@ const EditCategory = () => {
   // handling changes
   const handlePost = (e) => {
     e.preventDefault();
-    dispatch(putCategoryData({ goBoy, id: id }));
+    dispatch(fetchServiceData({ goBoy, id: id }));
   };
   return (
     <div

@@ -94,7 +94,7 @@ const AnalyticsCom = () => {
   return (
     <div className="full_part">
       <div className="for_p">
-        <h3 className="chartTitle">companies compared to last year</h3>
+        <h3 className="chartTitle">agencies compared to last year</h3>
         <div
           className="part"
           style={{
@@ -138,7 +138,7 @@ const AnalyticsCom = () => {
         </div>
       </div>
       <div className="for_p">
-        <h3 className="chartTitle">ticket compared to last year</h3>
+        <h3 className="chartTitle">services compared to last year</h3>
         <div
           className="part"
           style={{

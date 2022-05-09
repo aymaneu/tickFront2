@@ -43,9 +43,6 @@ const CompaniesAll = () => {
 
   return (
     <div className="companyCat">
-      <Link to="/newCompany">
-        <button className="companyAddButton">create</button>
-      </Link>
       <div
         style={{
           height: 400,
