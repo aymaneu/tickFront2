@@ -1,59 +1,55 @@
 import React, { useEffect } from "react";
 import "../style/css/featuredInfo.css";
 import { useSelector, useDispatch } from "react-redux";
-import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
-import { fetchCompaniesData } from "../features/reducers/companySlice";
-import { fetchAgenciesData } from "../features/reducers/agencySlice";
-import { fetchTicketData } from "../features/reducers/ticketSlice";
+import { fetchCompaniesLengthData } from "../features/reducers/companyLengthSlice";
+import { fetchAgencyLengthData } from "../features/reducers/agencyLengthSlice2";
+import { fetchTicketLengthData2 } from "../features/reducers/ticketLengthSlice2";
 
 const FeaturedInfo = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCompaniesData());
+    dispatch(fetchCompaniesLengthData());
   }, [dispatch]);
   useEffect(() => {
-    dispatch(fetchAgenciesData());
+    dispatch(fetchAgencyLengthData());
   }, [dispatch]);
   useEffect(() => {
-    dispatch(fetchTicketData());
+    dispatch(fetchTicketLengthData2());
   }, [dispatch]);
 
-  const company = useSelector((state) => state.companies.data);
-  const agency = useSelector((state) => state.agencies.data);
-  const ticket = useSelector((state) => state.tickets.data);
+  const company = useSelector(
+    (state) => state.companyFullLength.data.companyLength
+  );
+  const agency = useSelector(
+    (state) => state.agencyFullLength2.data.agencyLength
+  );
+  const ticket = useSelector(
+    (state) => state.ticketFullLength2.data.ticketLength
+  );
 
   return (
     <div className="Featured">
       <div className="featuredItem">
         <span className="featuredTitle">agencies</span>
         <div className="featuredStatueContainer">
-          <span className="featuredSome">{company.length}</span>
-          <span className="featuredSomeRate">
-            -11.4 <ArrowDownward className="featuredIcon negative" />
-          </span>
+          <span className="featuredSome">{company}</span>
         </div>
-        <span className="featuredSub">Compared to last month</span>
+        <span className="featuredSub">total agencies</span>
+      </div>
+      <div className="featuredItem">
+        <span className="featuredTitle">tickets</span>
+        <div className="featuredStatueContainer">
+          <span className="featuredSome">{agency}</span>
+        </div>
+        <span className="featuredSub">total tickets</span>
       </div>
       <div className="featuredItem">
         <span className="featuredTitle">services</span>
         <div className="featuredStatueContainer">
-          <span className="featuredSome">{agency.length}</span>
-          <span className="featuredSomeRate">
-            -11.4 <ArrowDownward className="featuredIcon negative" />
-          </span>
+          <span className="featuredSome">{ticket}</span>
         </div>
-        <span className="featuredSub">Compared to last month</span>
-      </div>
-      <div className="featuredItem">
-        <span className="featuredTitle">ticket</span>
-        <div className="featuredStatueContainer">
-          <span className="featuredSome">{ticket.length}</span>
-          <span className="featuredSomeRate">
-            +11.4 <ArrowUpward className="featuredIcon" />
-          </span>
-        </div>
-        <span className="featuredSub">Compared to last month</span>
+        <span className="featuredSub">total services</span>
       </div>
     </div>
   );

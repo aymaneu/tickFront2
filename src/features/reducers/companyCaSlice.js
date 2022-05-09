@@ -6,7 +6,7 @@ export const fetchCompaniesCategoryData = createAsyncThunk(
   "companyCategory/fetchCompaniesCategoryData",
   async ({ id }) => {
     const { data } = await axios.get(
-      `${API_URL}/getAllAgenciesCompany/${id}`
+      `${API_URL}/getAllCompaniesByCategory/${id}`
     );
     return data;
   }

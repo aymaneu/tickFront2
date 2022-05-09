@@ -2,33 +2,33 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { API_URL, HTTP_STATUS } from "../../app/constants";
 import axios from "axios";
 
-export const fetchCompaniesData = createAsyncThunk(
-  "company/fetchCompaniesData",
+export const fetchAgencyLengthData2 = createAsyncThunk(
+  "agencyLength2/fetchAgencyLengthData2",
   async () => {
-    const { data } = await axios.get(`${API_URL}/getAllCompanies`);
+    const { data } = await axios.get(`${API_URL}/getLengthAgency`);
     return data;
   }
 );
 
-const companySlice = createSlice({
-  name: "company",
+const agencyLengthSlice2 = createSlice({
+  name: "agencyLength2",
   initialState: {
     loading: null,
     data: [],
   },
   reducers: {},
   extraReducers: {
-    [fetchCompaniesData.pending](state) {
+    [fetchAgencyLengthData2.pending](state) {
       state.loading = HTTP_STATUS.PENDING;
     },
-    [fetchCompaniesData.fulfilled](state, { payload }) {
+    [fetchAgencyLengthData2.fulfilled](state, { payload }) {
       state.loading = HTTP_STATUS.FULFILLED;
       state.data = payload;
     },
-    [fetchCompaniesData.rejected](state) {
+    [fetchAgencyLengthData2.rejected](state) {
       state.loading = HTTP_STATUS.REJECTED;
     },
   },
 });
 
-export default companySlice.reducer;
+export default agencyLengthSlice2.reducer;

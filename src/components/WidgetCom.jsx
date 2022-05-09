@@ -17,32 +17,48 @@ const WidgetCom = () => {
   const looping = companySome.slice(0, 5).map((i) => {
     return i;
   });
+  const condition = companySome.length !== 0;
+
   return (
     <div className="widgetCom">
-      <h3 className="widgetComTitle">latest agencies</h3>
+      <h3 className="widgetComTitle">latest companies update</h3>
       <table className="widgetComTable">
         <tbody>
           <tr className="widgetComTr">
-            <th className="widgetComTh">agency Name</th>
+            <th className="widgetComTh">company Name</th>
             <th className="widgetComTh">Date</th>
             <th className="widgetComTh">Category</th>
             <th className="widgetComTh">Status</th>
           </tr>
-          {looping.map((comp) => {
-            return (
-              <tr key={comp.id} className="widgetComTr">
-                <td className="widgetComCategory">
-                  <img src={comp.avatar} alt="" className="widgetComImg" />
-                  <span className="widgetComName">{comp.email}</span>
-                </td>
-                <td className="widgetComDate">{comp.creationDate}</td>
-                <td className="widgetComAmount">{comp.name}</td>
-                <td className="widgetComStatus">
-                  <Button type={comp.status} />
-                </td>
-              </tr>
-            );
-          })}
+          {condition ? (
+            looping.map((comp) => {
+              return (
+                <tr key={comp.id} className="widgetComTr">
+                  <td className="widgetComCategory">
+                    <img src={comp.avatar} alt="" className="widgetComImg" />
+                    <span className="widgetComName">{comp.email}</span>
+                  </td>
+                  <td className="widgetComDate">{comp.creationDate}</td>
+                  <td className="widgetComAmount">{comp.name}</td>
+                  <td className="widgetComStatus">
+                    <Button type={comp.status} />
+                  </td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr className="widgetComTr">
+              <td className="widgetComCategory">
+                <img src="" className="widgetComImg" />
+                <span className="widgetComName">no email</span>
+              </td>
+              <td className="widgetComDate">no date</td>
+              <td className="widgetComAmount">no category</td>
+              <td className="widgetComStatus">
+                <Button type="nono" />
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

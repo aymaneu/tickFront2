@@ -5,7 +5,7 @@ import axios from "axios";
 export const fetchOneCompanyData = createAsyncThunk(
   "oneCompany/fetchOneCompanyData",
   async ({ id }) => {
-    const { data } = await axios.get(`${API_URL}/getOneAgency/${id}`);
+    const { data } = await axios.get(`${API_URL}/getOneCompany/${id}`);
     return data;
   }
 );
@@ -13,7 +13,7 @@ export const fetchOneCompanyData = createAsyncThunk(
 export const fetchOneCompanyData3 = createAsyncThunk(
   "oneCompany/fetchOneCompanyData3",
   async ({ id }) => {
-    const { data } = await axios.get(`${API_URL}/getAgencyDate/${id}`);
+    const { data } = await axios.get(`${API_URL}/getCompanyDate/${id}`);
     return data;
   }
 );
@@ -21,14 +21,14 @@ export const fetchOneCompanyData3 = createAsyncThunk(
 export const pushEditCompany = createAsyncThunk(
   "oneCompany/pushEditCompany",
   async ({ id, goBoy }) => {
-    const { data } = await axios.put(`${API_URL}/editAgency/${id}`, goBoy);
+    const { data } = await axios.put(`${API_URL}/editCompany/${id}`, goBoy);
     return data;
   }
 );
 export const postNewCompany = createAsyncThunk(
   "oneCompany/postNewCompany",
   async ({ id, goBoy }) => {
-    const { data } = await axios.post(`${API_URL}/addNewAgency/${id}`, goBoy);
+    const { data } = await axios.post(`${API_URL}/addNewCompany/${id}`, goBoy);
     console.log(goBoy);
     return data;
   }

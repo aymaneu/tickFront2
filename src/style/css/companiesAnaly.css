@@ -1,1 +1,1 @@
-.circle{width:160px;height:160px}.outer{height:160px;width:160px;border-radius:50%;border:1px solid red;padding:20px;box-shadow:6px 6px 10px -1px rgba(0,0,0,0.15) -6px -6px 10px -1px rgba(255,0,0,0.15)}.inner{height:120px;width:120px;border-radius:50%;border:1px solid red}
+.part{box-shadow:0px 0px 15px -10px rgba(0,0,0,0.75);margin:auto}.full_part{display:flex;flex-direction:column;gap:30px;margin-top:-50px !important}.for_p p{padding-bottom:10px;padding-left:30px}

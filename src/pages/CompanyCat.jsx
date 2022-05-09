@@ -13,6 +13,7 @@ const CompanyCat = () => {
     dispatch(fetchCompaniesCategoryData({ id: categoryId }));
   }, [dispatch]);
   const companies = useSelector((state) => state.companiesCategory.data);
+
   const columns = [
     { field: "companyId", headerName: "ID", width: 70 },
     { field: "companyName", headerName: "company Name", width: 150 },
@@ -40,6 +41,39 @@ const CompanyCat = () => {
       },
     },
   ];
+  const noCompanies = [
+    {
+      companyId: 1,
+      companyName: 0,
+      status: 0,
+      name: 0,
+      action: 0,
+      email: 0,
+    },
+  ];
+  const condition = companies.length == 1;
+
+  const bb = condition ? (
+    <DataGrid
+      getRowId={(r) => r.companyId}
+      rows={companies}
+      columns={columns}
+      pageSize={8}
+      rowsPerPageOptions={[5]}
+      checkboxSelection
+      disableSelectionOnClick
+    />
+  ) : (
+    <DataGrid
+      getRowId={(r) => r.companyId}
+      rows={noCompanies}
+      columns={columns}
+      pageSize={8}
+      rowsPerPageOptions={[5]}
+      checkboxSelection
+      disableSelectionOnClick
+    />
+  );
 
   return (
     <div className="companyCat">
@@ -54,15 +88,7 @@ const CompanyCat = () => {
         }}
         className="companyList"
       >
-        <DataGrid
-          getRowId={(r) => r.companyId}
-          rows={companies}
-          columns={columns}
-          pageSize={8}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
-          disableSelectionOnClick
-        />
+        {bb}
       </div>
     </div>
   );

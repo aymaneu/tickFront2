@@ -5,7 +5,10 @@ import { fetchCompaniesData } from "../features/reducers/companySlice";
 import "../style/css/companyCat.css";
 import { Link, useParams } from "react-router-dom";
 import { Visibility, DeleteOutline } from "@material-ui/icons";
-import { fetchCategoryData } from "../features/reducers/categorySlice";
+import {
+  deleteCategoryData,
+  fetchCategoryData,
+} from "../features/reducers/categorySlice";
 
 const CategoriesAll = () => {
   let { categoryId } = useParams();
@@ -14,10 +17,7 @@ const CategoriesAll = () => {
     dispatch(fetchCategoryData());
   }, [dispatch]);
   const categoriesData = useSelector((state) => state.categories.data);
-  const [data, setData] = useState(categoriesData);
-  const handleDelete = (id) => {
-    setData(categoriesData.filter((item) => item.id !== id));
-  };
+
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
     { field: "name", headerName: "Category Name", width: 150 },
@@ -40,7 +40,9 @@ const CategoriesAll = () => {
             </Link>
             <DeleteOutline
               className="companyListDelete"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => {
+                dispatch(deleteCategoryData({ id: params.row.id }));
+              }}
             />
           </>
         );

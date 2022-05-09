@@ -19,7 +19,7 @@ const WidgetCat = () => {
 
   return (
     <div className="widgetCat">
-      <span className="widgetCatTitle">services</span>
+      <span className="widgetCatTitle">categories</span>
       <ul className="widgetCatList">
         {looping.map((category) => {
           return (
