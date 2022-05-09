@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchCategoryData } from "../features/reducers/categorySlice";
 import { Link, useParams } from "react-router-dom";
 
-const WidgetCat = () => {
+const WidgetSer = () => {
   let { categoryId } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +19,7 @@ const WidgetCat = () => {
 
   return (
     <div className="widgetCat">
-      <span className="widgetCatTitle">categories</span>
+      <span className="widgetCatTitle">services</span>
       <ul className="widgetCatList">
         {looping.map((category) => {
           return (
@@ -41,4 +41,4 @@ const WidgetCat = () => {
   );
 };
 
-export default WidgetCat;
+export default WidgetSer;

@@ -13,6 +13,7 @@ import ticketLengthReducer2 from "../reducers/ticketLengthSlice2";
 import ticketLengthReducer from "../reducers/ticketLengthSlice";
 import serviceLengthReducer from "../reducers/serviceLengthSlice";
 import companyLengthReducer from "../reducers/companyLengthSlice";
+import agencyChartReducer from "../reducers/agencyChartSlice";
 
 const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ const store = configureStore({
     companyDate: companyDateReducer,
     companiesCategory: companyCategoryReducer,
     companiesChart: companyChartReducer,
+    agenciesChart: agencyChartReducer,
     agencies: agencyReducer,
     agencyFullLength: agencyLengthReducer,
     companyFullLength: companyLengthReducer,
